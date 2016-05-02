@@ -27,6 +27,6 @@ logging.info("Start pirsensor ...")
 try:
 	GPIO.add_event_detect(PIR_PIN, GPIO.RISING, callback=motion)
 	while 1:
-		time.sleep(1)
+		time.sleep(100)
 except KeyboardInterrupt:
 	GPIO.cleanup()
