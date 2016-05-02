@@ -16,11 +16,11 @@ PIR_PIN = 18                     # this is the GPIO pin
 GPIO.setup(PIR_PIN, GPIO.IN)
 def motion(PIR_PIN):
 	os.system("/usr/bin/curl --header \"Content-Type: text/plain\" --request POST --data \"ON\" " + rest_url)
-	logging.info("motion  ON: " + rest_url)
+	logging.debug("motion  ON: " + rest_url)
 	time.sleep(5)
 	os.system("/usr/bin/curl --header \"Content-Type: text/plain\" --request POST --data \"OFF\" " + rest_url)
 	os.system("/usr/bin/curl --header \"Content-Type: text/plain\" --request POST --data \"OFF\" " + rest_url)
-	logging.info("motion OFF: " + rest_url)
+	logging.debug("motion OFF: " + rest_url)
 	time.sleep(2)
 
 logging.info("Start pirsensor ...")
